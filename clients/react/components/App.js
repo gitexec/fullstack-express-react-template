@@ -15,7 +15,7 @@ export default class App extends Component {
 
     return (
       <div>
-        <h1>Hello</h1>
+        <h1>Hello Dev</h1>
         <div id="home-img">
           <img src={homeIcon}  />
         </div>
