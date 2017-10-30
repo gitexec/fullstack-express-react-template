@@ -9,7 +9,6 @@
   },
   "dependencies": {
     "bootstrap": "^3.3.7",
-    "history": "^4.7.2",
     "jquery": "^3.2.1",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
@@ -18,9 +17,11 @@
     "react-router-redux": "^4.0.8",
     "redux": "^3.7.2",
     "redux-saga": "^0.16.0",
+    "redux-thunk": "^2.2.0",
     "toastr": "^2.1.2"
   },
   "devDependencies": {
+    "react-hot-loader": "^3.1.1",
     "static-favicon": "~1.0.0",
     "morgan": "~1.0.0",
     "cookie-parser": "~1.0.1",

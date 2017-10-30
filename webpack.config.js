@@ -8,7 +8,7 @@ const packages = require('./package.json');
 let config = {
   entry: {
     'javascripts/vendor-bundle.js': Object.keys(packages.dependencies),
-    'javascripts/site-bundle.js': './clients/react/app.js'
+    'javascripts/site-bundle.js': './clients/react/boot-client.js'
   },
   output: {
     path: path.resolve(__dirname + '/public/'),
@@ -70,11 +70,7 @@ let config = {
 
 if (process.env.NODE_ENV === 'production'){
   config.plugins.push(
-    new webpack.optimize.UglifyJsPlugin({
-        compress: {
-            screw_ie8: true
-        }
-    })
+    new webpack.optimize.UglifyJsPlugin({})
   )
 }
 else {
