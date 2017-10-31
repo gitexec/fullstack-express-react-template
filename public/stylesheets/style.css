@@ -6477,7 +6477,7 @@ button.close {
     overflow: hidden;
     text-overflow: ellipsis; } }
 div {
-  background-color: #99cc00;
+  background-color: transparent;
   padding: 10px; }
 
 .settingIcon {

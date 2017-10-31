@@ -5,10 +5,10 @@ export class Layout extends Component {
     render() {
         return <div className='container-fluid'>
             <div className='row'>
-                <div className='col-sm-3'>
+                <div className='row'>
                     <Header />
                 </div>
-                <div className='col-sm-9'>
+                <div className='row'>
                     { this.props.children }
                 </div>
             </div>
