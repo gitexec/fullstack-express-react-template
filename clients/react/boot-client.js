@@ -10,14 +10,26 @@ import reduxThunk from 'redux-thunk';
 import './assets/stylesheets/appStyles.scss';
 import './assets/stylesheets/app.css';
 
-import { Routes }  from './Routes';
 import reducers from './reducers/reducers'
+let Routes = require('./Routes').Routes;
 
 const initialState =  window.STATE_FROM_SERVER;
 let store = createStore(reducers, {}, applyMiddleware(reduxThunk));
-ReactDOM.render(
-  <Provider store={store}>
-    <Routes />
-  </Provider>
-  ,document.querySelector("#react-app")
-);
+
+function renderApp(){
+  ReactDOM.render(
+    <Provider store={store}>
+      <Routes />
+    </Provider>
+    ,document.querySelector("#react-app")
+  );
+}
+
+renderApp();
+
+if(module.hot){
+  module.hot.accept('./Routes', () => {
+    Routes = require('./Routes').Routes;
+    renderApp();    
+  })
+}
