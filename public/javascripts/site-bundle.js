@@ -57,12 +57,12 @@ function renderApp() {
 
 renderApp();
 
-if (true) {
-  module.hot.accept(29, function () {
-    Routes = __webpack_require__(29).Routes;
-    renderApp();
-  });
-}
+// if(module.hot){
+//   module.hot.accept('./Routes', () => {
+//     Routes = require('./Routes').Routes;
+//     renderApp();
+//   })
+// }
 
 /***/ }),
 

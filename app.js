@@ -24,14 +24,12 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 //##List of Routes
 //index
-app.get('/', function(req, res){
-  res.redirect('/site');
-});
-app.use('/site', siteRoutes);
+
+app.use('/', siteRoutes);
 app.use('/users', userRoutes);
 app.use('/apis', apisRoutes);
 
-List of /// catch 404 and forwarding to error handler
+/// catch 404 and forwarding to error handler
 app.use(function(req, res, next) {
     var err = new Error('Not Found');
     err.status = 404;;

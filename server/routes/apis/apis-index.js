@@ -6,7 +6,7 @@ apis.get('/'), function(req, res){
 }
 /* GET home page. */
 apis.get('/vid-pics', function(req, res) {
-    res.send({name: 'hey serve'});
+    res.send({name: 'hey serve client'});
 });
 /**/
-module.exports = router;
+module.exports = apis;

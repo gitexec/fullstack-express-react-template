@@ -27,9 +27,9 @@ function renderApp(){
 
 renderApp();
 
-if(module.hot){
-  module.hot.accept('./Routes', () => {
-    Routes = require('./Routes').Routes;
-    renderApp();    
-  })
-}
+// if(module.hot){
+//   module.hot.accept('./Routes', () => {
+//     Routes = require('./Routes').Routes;
+//     renderApp();
+//   })
+// }
