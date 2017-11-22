@@ -1,11 +1,14 @@
 import React from 'react';
-import { BrowserRouter, Route } from 'react-router-dom';
+import { BrowserRouter, Route, Switch  } from 'react-router-dom';
+import SampleComponent from './components/SampleComponent';
+import { PrimaryLayout } from './components/Layout';
+import { Profile } from './components/Profile';
 
-import Test from './components/Test';
-import { Layout } from './components/Layout';
-
-export const Routes = () => <Layout>
+export const Routes = () => <PrimaryLayout>
         <BrowserRouter>
-            <Route exact path ='/' component={Test} />
+          <Switch>
+            <Route exact path="/" component={ SampleComponent } />
+            <Route path="/instructors" component={ Profile } />
+          </Switch>
         </BrowserRouter>
-      </Layout>;
+</PrimaryLayout>;

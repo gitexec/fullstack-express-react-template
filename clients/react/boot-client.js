@@ -1,25 +1,32 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import $ from 'jquery';
-import toastr from 'toastr';
-import 'bootstrap/dist/css/bootstrap.css';
 import { createStore,  applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import reduxThunk from 'redux-thunk';
+import 'antd/dist/antd.less';
+import './assets/stylesheets/appStyles.less';
+import 'bootstrap/dist/css/bootstrap.css';
 
-import './assets/stylesheets/appStyles.scss';
-import './assets/stylesheets/app.css';
+//if the same or a lot of ant-design components are beeing imported in multiple location
+//use import {LocaleProvider} from 'antd'; for every component and load the entire lib to client
+import LocaleProvider from 'antd/lib/locale-provider';
+import enUS from 'antd/lib/locale-provider/en_US';
+
+// import injectTapEventPlugin from 'react-tap-event-plugin';
+// injectTapEventPlugin();
 
 import reducers from './reducers/reducers'
 let Routes = require('./Routes').Routes;
 
 const initialState =  window.STATE_FROM_SERVER;
-let store = createStore(reducers, {}, applyMiddleware(reduxThunk));
+let store = createStore(reducers, initialState, applyMiddleware(reduxThunk));
 
 function renderApp(){
   ReactDOM.render(
     <Provider store={store}>
-      <Routes />
+      <LocaleProvider locale={enUS}>
+          <Routes />
+      </LocaleProvider>
     </Provider>
     ,document.querySelector("#react-app")
   );
